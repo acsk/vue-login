@@ -4,7 +4,7 @@
       <input type="text" placeholder="nome" v-model="login.usuario" />
       <input type="text" placeholder="senha" v-model="login.senha" />
       <button type="submit" class="btn" @click.prevent="logar">Login</button>
-      <button type="submit" class="btn" @click.prevent="logoff">Logoff</button>
+  
 
       {{ $store.state.user }} - {{ $store.state.token }}
     </form>
@@ -30,13 +30,7 @@ export default {
         this.$router.push({ name: "content" });
       });
     },
-    logoff() {
-      window.localStorage.clear();
-      this.$store.state.user = "";
-      this.$store.state.pass = "";
-      this.$store.state.token = "";
-      this.$router.push({ name: "home" });
-    },
+    
   },
 };
 </script>
